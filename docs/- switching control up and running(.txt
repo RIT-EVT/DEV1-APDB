@@ -1,0 +1,4 @@
+- switching control up and running(check drivers LVSS)-
+
+- set up CanOpen 
+	- Broadcasting current 
