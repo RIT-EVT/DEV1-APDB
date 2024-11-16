@@ -1,4 +1,28 @@
 - switching control up and running(check drivers LVSS)-
 
 - set up CanOpen 
-	- Broadcasting current 
+	- Broadcasting current
+
+At a high level, what does the board do for the bike?
+
+Does the board have JTAG/SWD and UART?
+
+If it doesn't have one of these, be sure to let them know that they are practically required for development.
+
+If they don't' have enough pins to support one or both of these, reach out to your firmware lead to see if there's any way to get around using them.
+
+What communication protocols does board use?
+
+What devices are on the board that will need drivers?
+
+Ask for datasheets for each of the devices.
+
+Also be sure to ask if they can get breakout boards or EVMs (EValuation Modules) that we can use for driver development.
+
+What other boards does the board communicate with?
+
+What CAN messages does it need to send and receive?
+
+Does the board have multiple states, or does it just operate in the same way the entire time?
+
+If it has multiple states, you should work with them to develop a state machine.
