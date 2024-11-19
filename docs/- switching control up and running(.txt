@@ -1,9 +1,17 @@
 - switching control up and running(check drivers LVSS)-
-
+- APDB
+- STM32f3, ADC on the sense pin, check pin for sense
 - set up CanOpen 
 	- Broadcasting current
 
 At a high level, what does the board do for the bike?
+
+To digitize the APDB, to add more safety features and to make the board smaller
+(possible removal of fuses and flyback diodes??)
+
+Board purpose: to control switching on and off all the different 12v sub-systems around the bike,
+to monitor current going to each sub-system, and if there is a fault in any sub-system.
+This is done with high-side power switches and a microcontroller to control the
 
 Does the board have JTAG/SWD and UART?
 
@@ -12,17 +20,27 @@ If it doesn't have one of these, be sure to let them know that they are practica
 If they don't' have enough pins to support one or both of these, reach out to your firmware lead to see if there's any way to get around using them.
 
 What communication protocols does board use?
-
+CAN
 What devices are on the board that will need drivers?
+CAN, were making a driver for the switch
 
 Ask for datasheets for each of the devices.
-
+-
 Also be sure to ask if they can get breakout boards or EVMs (EValuation Modules) that we can use for driver development.
+-
 
 What other boards does the board communicate with?
+PVC, GUB\
 
 What CAN messages does it need to send and receive?
+reading from sense pin to sending: Voltage, temprature , status of switches to GUB
+
+receivin: signals to turn on things[optional|]
+- overiding the physical signals with the CAN COntroller signals
 
 Does the board have multiple states, or does it just operate in the same way the entire time?
+same way
+ecide how to implementing
 
 If it has multiple states, you should work with them to develop a state machine.
+-
