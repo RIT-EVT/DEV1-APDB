@@ -13,16 +13,16 @@ namespace APDB {
 
 /**
  * This class is used to control the TPS2HB50AQ1 power switch.
- * The TPS2HA50BQ1 is a high side switch that can be used to control
+ * The TPS2HA50AQ1 is a high side switch that can be used to control
  * the power to up to two devices.
  *
- * The TPS2HA50BQ1 has a diagnostic mode that can be used to read the
+ * The TPS2HA50AQ1 has a diagnostic mode that can be used to read the
  * current, temperature, or fault status of the device.
  */
 class TPS2HB50AQ1 {
 public:
     /**
-     * Constructor for the TPS2HA50BQ1 class
+     * Constructor for the TPS2HA50AQ1 class
      * @param en1 GPIO pin for first power switch
      * @param en2 GPIO pin for second power switch
      * @param latch GPIO pin for latch, see LatchMode enum for options

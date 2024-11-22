@@ -11,6 +11,13 @@
 #include <cstring>
 #include <dev/ACS71240.hpp>
 #include <dev/TPS2HB50AQ1.hpp>
+#include <EVT/io/CAN.hpp>
+#include <EVT/io/CANDevice.hpp>
+#include <EVT/io/CANOpenMacros.hpp>
+#include <EVT/io/GPIO.hpp>
+#include <EVT/io/SPI.hpp>
+#include <EVT/io/UART.hpp>
+
 
 namespace IO = EVT::core::IO;
 namespace DEV = EVT::core::DEV;
@@ -25,6 +32,10 @@ static constexpr uint8_t POWER_SWITCHES_SIZE = 2;
 class APDB : public CANDevice {
 public:
     static constexpr uint8_t NODE_ID = 42;
+
+    /** APDB pin out */
+
+
 
     /**
      * Constructor for the APDB class, takes a pointer to an array of power switches
@@ -44,10 +55,10 @@ public:
     void process();
 
 private:
-    // false = OFF, true = ON?
+//     false = OFF, true = ON?
 
     TPS2HB50BQ1* powerSwitches[POWER_SWITCHES_SIZE]{};// a struct for each power switch (of which there are 3)
-    // ACS781XLR currentSensor;
+//     ACS781XLR currentSensor
 };
 
 }// namespace APDB
